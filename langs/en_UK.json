@@ -4,8 +4,8 @@
   "config.general.enable_mod.desc": "Master toggle for PartyUnNoobifier",
   "config.general.prefix": "Mod Prefix",
   "config.general.prefix.desc": "Prefix for mod messages in chat. Use & for color codes (e.g., &a for light green)",
-  "config.general.custom_ranks": "Custom Ranks",
-  "config.general.custom_ranks.desc": "Display custom cosmetic ranks for players (name colors, prefixes)",
+  "config.general.puncosmetics": "PUNCosmetics",
+  "config.general.puncosmetics.desc": "Display custom cosmetic ranks for players (name colors, prefixes)",
 
   "config.blacklist.title": "Blacklist Settings",
   "config.blacklist.enable": "Enable",
@@ -39,6 +39,8 @@
   "config.requeue.all_ready_msg": "All Ready Message",
   "config.requeue.all_ready_msg.desc": "Message when everyone is ready",
 
+  "config.chat_commands.title": "Chat Commands",
+
   "config.party_commands.title": "Party Commands",
   "config.party_commands.enable": "Enable Party Commands",
   "config.party_commands.enable.desc": "Allow party members to use !commands (!warp, !pt, !kick, etc.)",
@@ -55,6 +57,14 @@
   "config.party_commands.stats.desc": "Stats summary of designed player",
   "config.party_commands.floor.desc": "Join dungeon floors",
   "config.party_commands.kuudra.desc": "Join Kuudra tiers",
+
+  "config.dm_commands.title": "DM Commands",
+  "config.dm_commands.enable": "Enable DM Commands",
+  "config.dm_commands.enable.desc": "Allow players to trigger party commands by whispering !commands to you",
+  "config.dm_commands.invite.desc": "Allow players to request a party invite via DM",
+  "config.dm_commands.loc.desc": "Allow players to request your coordinates via DM",
+  "config.dm_commands.stats.desc": "Allow players to request stats lookup via DM",
+  "config.dm_commands.help.desc": "Allow players to list available DM commands",
 
   "config.filters.title": "Filters",
   "config.filters.dungeons.title": "Dungeons",
@@ -92,8 +102,8 @@
   "config.advanced.debug": "Debug Mode",
   "config.advanced.debug.desc": "Enable debug logs (Required for the dev to understand your issue if you encounter a reproducible bug)",
 
-  "chat.kick.not_leader_thrower": "§e§l/§4§l!§e§l\\ §cWould have kicked §b§l{user}§c but you're not party leader.§7 (Thrower)",
-  "chat.kick.kicking_thrower": "§e§l/§4§l!§e§l\\ §aKicking §b§l{user} §7(Reason: §b{reason}§7)",
+  "chat.kick.not_leader_blacklist": "§e§l/§4§l!§e§l\\ §cWould have kicked §b§l{user}§c but you're not party leader.§7 (Blacklisted)",
+  "chat.kick.kicking_blacklist": "§e§l/§4§l!§e§l\\ §aKicking §b§l{user} §7(Reason: §b{reason}§7)",
   "chat.kick.not_leader_class": "§e§l/§4§l!§e§l\\ §cWould have kicked §b§l{user}§c but you're not party leader. §7(Class: §c§l{class}§7)",
   "chat.kick.kicking_class": "§e§l/§4§l!§e§l\\ §aKicking §b§l{user}§7 (Class not allowed: §c§l{class}§7)",
   "chat.kick.not_leader_secrets": "§e§l/§4§l!§e§l\\ §cWould have kicked §b§l{user}§c but you're not party leader.§7 (Secrets: §c{current} §7< §a{required}§7)",
@@ -108,13 +118,13 @@
   "chat.config.open_failed": "Failed to open config: {error}",
 
   "chat.help.config": "§a─ §b{prefix} config §7- Open config screen",
-  "chat.help.add": "§a─ §b{prefix} add <name> <reason> §7- Add user to the blacklist",
-  "chat.help.remove": "§a─ §b{prefix} remove <name> §7- Remove user from the blacklist",
+  "chat.help.add": "§a─ §b{prefix} add [name] [reason] §7- Add user to the blacklist",
+  "chat.help.remove": "§a─ §b{prefix} remove [name] §7- Remove user from the blacklist",
   "chat.help.list": "§a─ §b{prefix} list [page] §7- Show the blacklist",
-  "chat.help.check": "§a─ §b{prefix} check <name> §7- Check if user is on the blacklist",
+  "chat.help.check": "§a─ §b{prefix} check [name] §7- Check if user is on the blacklist",
   "chat.help.scan": "§a─ §b{prefix} scan §7- Scan blacklist for nickname changes",
-  "chat.help.import": "§a─ §b{prefix} import <file> §7- Import a blacklist from a backup file",
-  "chat.help.requeue": "§a─ §b{prefix} requeue <args> §7- Toggle auto-requeue or takes the argument : <cancelDT>",
+  "chat.help.import": "§a─ §b{prefix} import [file] §7- Import a blacklist from a backup file",
+  "chat.help.requeue": "§a─ §b{prefix} requeue [args] §7- Toggle auto-requeue or takes the argument : [cancelDT]",
   "chat.help.checkupdate": "§a─ §b{prefix} checkupdate §7- Check for mod updates",
 
   "chat.blacklist.fetching": "§eFetching informations...",
@@ -125,7 +135,7 @@
   "chat.blacklist.found": "§b{name} §ais on your blacklist! Reason: §b{reason}",
   "chat.blacklist.not_on_list": "§b{name} §ais not on your blacklist",
   "chat.blacklist.empty": "Blacklist is empty",
-  "chat.blacklist.empty_hint": "Your blacklist is empty. Add players with §b{prefix} add <username> <reason>",
+  "chat.blacklist.empty_hint": "Your blacklist is empty. Add players with §b{prefix} add [username] [reason]",
 
   "chat.scan.starting": "§aScanning §b{count} §aplayer{plural}... (≈§e{time}§a)",
   "chat.scan.complete_updated": "Scan complete! Updated {count} entries:",
@@ -163,7 +173,7 @@
   "chat.debug.is_leader.yes": "§b§l─ §7isLeader: §a✓ YES",
   "chat.debug.is_leader.no": "§b§l─ §7isLeader: §c✗ NO",
   "chat.debug.members": "§b§l─ §7Party Members ({count}): §e{list}",
-  "chat.debug.throwers": "§b§l─ §7Blacklisted: §c{count}",
+  "chat.debug.blacklists": "§b§l─ §7Blacklisted: §c{count}",
   "chat.debug.auto_kick.enabled": "§b§l─ §7Auto-Kick: §aEnabled",
   "chat.debug.auto_kick.disabled": "§b§l─ §7Auto-Kick: §cDisabled",
   "chat.debug.requeue.enabled": "§b§l─ §7Enabled: §a✓ YES",

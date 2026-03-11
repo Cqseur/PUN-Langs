@@ -6,11 +6,11 @@ Community-maintained translation files for [PartyUnNoobifier](https://modrinth.c
 
 Each language file is a JSON with `"key": "translated text"` pairs.
 
-| File         | Language   | Status                  |
-| ------------ | ---------- | ----------------------- |
-| `en_UK.json` | 🇬🇧 English | ✅ Complete (reference) |
-| `fr_FR.json` | 🇫🇷 French  | ✅ Complete             |
-| `de_DE.json` | 🇩🇪 German  | ✅ Complete             |
+| File         | Language   | Status                  | Credit         |
+| ------------ | ---------- | ----------------------- |-----------------|
+| `en_UK.json` | 🇬🇧 English | ✅ Complete (reference) |😉|
+| `fr_FR.json` | 🇫🇷 French  | ✅ Complete             |🥰|
+| `de_DE.json` | 🇩🇪 German  | ✅ Complete             |Knuffiman        |
 
 ## 🤝 How to Contribute
 
